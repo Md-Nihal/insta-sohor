@@ -57,6 +57,7 @@ const createPost = (post) => {
     const div = document.createElement( "article" );
     div.classList.add( "post" );
     // 2nd mistake solved (user profile image)
+    // 4th mistake solved(who's commenting and what is the comment)
     div.innerHTML = `
               <div class="post__header">
                 <div class="post__profile">
@@ -123,9 +124,9 @@ const createPost = (post) => {
                   <div class="post__description">
                     <small>
                       <a class="post__name--underline" href="#">
-                          ${post.comments?.user}
+                          ${post.comments[0].user}
                       </a>
-                      ${post.comments?.text}
+                      ${post.comments[0].text}
                     </small>
                   </div>
                   <span class="post__date-time">30 minutes ago</span>
@@ -155,7 +156,7 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
     const reportedPosts = getReportedPosts();
-    posts.forEach((post) => {
+    post.forEach((post) => {
         const div = createPost(post);
         document.getElementById( "reported" ).appendChild(div);
     });
