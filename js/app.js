@@ -148,7 +148,7 @@ const showPosts = (posts) => {
         productsContainer.appendChild(div);
     });
 };
-
+// Mistake no-6 solved
 const displayLikedPosts = () => {
     const likedPosts = getLikedPosts();
     const liked = document.getElementById( "liked" );
@@ -159,7 +159,7 @@ const displayLikedPosts = () => {
         
     });
 };
-
+// extra problem solved
 const displayReportedPosts = () => {
     const reportedPosts = getReportedPosts();
     const report =document.getElementById( "reported" );
