@@ -43,7 +43,7 @@ const switchTab = (id) => {
         document.getElementById( "posts" ).style.display = "none";
         document.getElementById( "reported" ).style.display = "none";
         document.getElementById( "question" ).style.display = "none";
-
+     
         displayLikedPosts();
     } else {
         document.getElementById( "reported" ).style.display = "block";
@@ -151,18 +151,23 @@ const showPosts = (posts) => {
 
 const displayLikedPosts = () => {
     const likedPosts = getLikedPosts();
+    const liked = document.getElementById( "liked" );
+    liked.innerHTML = '';
     likedPosts.forEach((post) => {
         const div = createPost(post);
-        document.getElementById( "liked" ).appendChild(div);
+    liked.appendChild(div);
+        
     });
 };
 
 const displayReportedPosts = () => {
     const reportedPosts = getReportedPosts();
+    const report =document.getElementById( "reported" );
+  report.innerHTML = '';
     // 5th mistake(reported post displaying)
     reportedPosts.forEach((post) => {
         const div = createPost(post);
-        document.getElementById( "reported" ).appendChild(div);
+        report.appendChild(div);
     });
 };
 
